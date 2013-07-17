@@ -16,12 +16,14 @@ def numGuessesRequired(word):
     numGuesses = 0
     guesses = ""
     
-    while pattern != word.spelling and numGuesses<30:
+    while pattern != word.spelling and numGuesses < 30:
+        
         # make a guess!
         #print "I previously guessed", guesses
         #print "I have made", numGuesses, "wrong guesses."
-        guess = hangman_guesser.suggestion(pattern, guesses)[0]
+        guess = hangman_guesser.suggestion(pattern, guesses, freq=False)[0]
         guesses += guess
+        
         if guess not in word.spelling:
             numGuesses +=1
         #print "I guess the letter",guess
@@ -37,7 +39,7 @@ def numGuessesRequired(word):
     return numGuesses
 
 if __name__ == "__main__":
-    with open("test.csv", 'wb') as f:
+    with open("output.csv", 'wb') as f:
         
         # CSV writing object
         w = csv.writer(f)
@@ -50,7 +52,7 @@ if __name__ == "__main__":
             word = CMUcorpus.words[i]
             if i % (l/500) == 0:
                 print i, "out of", l
-            #print word
+            print word
             numReqd = numGuessesRequired(word)
             #r[word] = numReqd
             w.writerow([word.spelling, numReqd])

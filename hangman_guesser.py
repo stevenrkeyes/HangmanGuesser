@@ -54,7 +54,7 @@ def suggestLettersWordCount(pattern, guesses):
 
     letterFreq = {}
 
-    possibleLetters = string.letters.lower()[:26]
+    possibleLetters = [e for e in string.letters.lower()[:26] if e not in pattern and e not in guesses]
     for l in possibleLetters:
         letterFreq[l] = sum(1 for w in possibleWords if l in w.spelling)
 
@@ -72,9 +72,12 @@ def suggestLettersFreq(pattern, guesses):
 
     return letterFreq
 
-def suggestion(pattern, guesses):
-    # list of letters keying their frequencies
-    d = suggestLettersFreq(pattern, guesses)
+def suggestion(pattern, guesses, freq=True):
+    if freq:
+        # list of letters keying their frequencies
+        d = suggestLettersFreq(pattern, guesses)
+    else:
+        d = suggestLettersWordCount(pattern, guesses)
     # list of letters
     f = d.keys()
     #print "The most common letters for this pattern and their counts are the following."
