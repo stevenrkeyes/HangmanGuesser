@@ -1,0 +1,14 @@
+len(withoutLetters(CMUcorpus.words, "zxcvbnmasdfghjkl"))
+suggests that something like 300 words can be spelled with only the top row of the keyboard
+
+len(withoutLetters(CMUcorpus.words, "qwertyuiopzxcvbnm"))
+suggests that only something like 100 words can be spelled with only the middle row of 
+the keyboard.
+
+len(withoutLetters(CMUcorpus.words, "qwertyuiopasdfghjkl"))
+suggests that only 11 words can be spelled with only the bottom row of the keyboard, though looking at the results confirms all these are vowelless initialisms like "BBC" and "MC"
+
+
+dangerously and singaporean are the only two 11 letter words with pattern --ng--o----
+--ng--o----
+singaporean
