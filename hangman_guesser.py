@@ -56,7 +56,7 @@ def suggestLettersWordCount(pattern, guesses):
 
     possibleLetters = [e for e in string.letters.lower()[:26] if e not in pattern and e not in guesses]
     for l in possibleLetters:
-        letterFreq[l] = sum(1 for w in possibleWords if l in w.spelling)
+        letterFreq[l] = sum(int(l in w.spelling) for w in possibleWords)
 
     return letterFreq
 

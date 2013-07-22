@@ -1,0 +1,5 @@
+here someone related to wolfram alpha made a hangman guesser, but for part of it he used a random gen
+also, he used word count, not weighted by word occurance
+http://140.177.205.236/2010/08/13/25-best-hangman-words/
+
+http://en.wikipedia.org/wiki/Hangman_(game)

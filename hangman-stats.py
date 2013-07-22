@@ -52,7 +52,7 @@ if __name__ == "__main__":
             word = CMUcorpus.words[i]
             if i % (l/500) == 0:
                 print i, "out of", l
-            print word
+            #print word
             numReqd = numGuessesRequired(word)
             #r[word] = numReqd
             w.writerow([word.spelling, numReqd])
